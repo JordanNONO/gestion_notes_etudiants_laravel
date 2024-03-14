@@ -12,7 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('etudiant', function (Blueprint $table) {
-            $table->id();
+            $table->string('id_etud', 30)->primary();
+            $table->string('nom_etud', 126);
+            $table->string('prenom_etud', 126)->nullable();
+            $table->string('sexe_etud', 20);
+            $table->string('age_etud',20);
+            $table->string('lieu_naissance', 126);
+            $table->string('email_etud', 126)->nullable();
+            $table->string('email_parent', 126);
+            $table->string('adresse_etud', 126);
+            $table->string('tel_etud', 20);
+            $table->smallInteger('annee_etud')->default(2024);
             $table->timestamps();
         });
     }
